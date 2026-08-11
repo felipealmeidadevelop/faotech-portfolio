@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# faoTech — portfolio
 
-## Getting Started
+Site da faoTech com portfolio pessoal em [`/me`](https://faotech.com.br/me).
 
-First, run the development server:
+- `faotech.com.br` → redireciona para `/me`
+- Stack: Next.js (App Router) + TypeScript + Tailwind + **Fira Code**
+
+## Desenvolvimento
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000/me](http://localhost:3000/me).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy na Vercel + domínio
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Crie um repositório no GitHub e faça push deste projeto.
+2. Em [vercel.com/new](https://vercel.com/new), importe o repositório (framework: Next.js).
+3. Após o deploy, em **Project → Settings → Domains**, adicione:
+   - `faotech.com.br`
+   - `www.faotech.com.br` (opcional; redirecione para o apex)
+4. No **Registro.br** (ou onde o domínio foi comprado), configure o DNS conforme a Vercel indicar:
+   - **Opção A (recomendada):** nameservers da Vercel
+   - **Opção B:** registro `A` de `@` apontando para `76.76.21.21` e `CNAME` de `www` para `cname.vercel-dns.com`
+5. Aguarde a propagação DNS e valide:
+   - `https://faotech.com.br` → `/me`
+   - `https://faotech.com.br/me`
 
-## Learn More
+## Conteúdo editável
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Textos e links ficam em [`src/app/me/content.ts`](src/app/me/content.ts).  
+Assets da marca em `public/brand`, wallpapers em `public/wallpapers`, CV em `public/cv`.
