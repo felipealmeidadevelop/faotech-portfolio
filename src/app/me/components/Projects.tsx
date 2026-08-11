@@ -18,8 +18,8 @@ export function Projects() {
           Produtos que construí
         </h2>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-          Referências públicas do Tutu e da Goold — do SaaS à aplicação de
-          agendamento.
+          Referências públicas do Tutu e de uma aplicação de agendamentos em
+          PWA.
         </p>
 
         <ul className="mt-14 space-y-0 divide-y divide-border border-y border-border">

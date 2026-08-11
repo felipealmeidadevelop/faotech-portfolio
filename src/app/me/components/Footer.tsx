@@ -28,6 +28,18 @@ export function Footer() {
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted">
             {profile.name} — {profile.role}.
           </p>
+          <ul className="mt-4 space-y-1.5 text-sm text-muted">
+            {profile.emails.map((email) => (
+              <li key={email}>
+                <a
+                  href={`mailto:${email}`}
+                  className="cta hover:text-brand-bright"
+                >
+                  {email}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-brand-bright">

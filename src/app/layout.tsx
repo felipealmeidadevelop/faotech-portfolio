@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s · faoTech",
   },
   description:
-    "Portfolio de Felipe de Almeida Oliveira — Desenvolvedor Fullstack (React + Node). Projetos Tutu e Goold.",
+    "Portfolio de Felipe de Almeida Oliveira — Desenvolvedor Fullstack (React + Node). Projetos Tutu e aplicação de agendamentos em PWA.",
   metadataBase: new URL("https://faotech.com.br"),
   openGraph: {
     title: "faoTech — Felipe de Almeida Oliveira",

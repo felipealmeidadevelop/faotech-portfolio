@@ -73,6 +73,12 @@ export function Hero() {
               >
                 GitHub
               </a>
+              <a
+                href={`mailto:${profile.emails[0]}`}
+                className="cta inline-flex items-center rounded-md border border-transparent px-5 py-3 text-sm font-semibold text-muted hover:text-white"
+              >
+                E-mail
+              </a>
             </div>
           </div>
 
