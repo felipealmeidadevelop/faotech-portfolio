@@ -5,3 +5,7 @@ buildCommand = "npm run build"
 [deploy]
 startCommand = "npm start"
 restartPolicyType = "ON_FAILURE"
+
+[variables]
+HOSTNAME = "0.0.0.0"
+PORT = "8080"

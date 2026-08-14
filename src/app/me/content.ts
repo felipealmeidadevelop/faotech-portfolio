@@ -39,10 +39,10 @@ export const experience = [
     role: "Desenvolvedor Fullstack",
     period: "Fevereiro 2026 — atual",
     bullets: [
-      "Desenvolvimento fullstack de aplicação de agendamentos em PWA com React e Node.",
+      "Desenvolvimento do ERP da empresa com React (Vite) no frontend e Node.js no backend.",
       "Planejamento, modelagem, desenvolvimento e manutenção de sistemas.",
     ],
-    stack: ["React", "Node", "TypeScript"],
+    stack: ["React", "Vite", "Node.js"],
   },
   {
     company: "PRODEB — Companhia de Processamento de Dados do Estado da Bahia",

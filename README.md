@@ -33,15 +33,18 @@ O projeto já está com `output: "standalone"` e `railway.toml` para build/start
 3. A Railway mostra **dois registros DNS** — copie os dois:
    - `CNAME` → alvo `*.up.railway.app` (ou o host que a UI mostrar)
    - `TXT` → verificação de propriedade (`_railway-verify...`)
-4. No **Registro.br** (DNS do domínio):
-   - Crie o **TXT** exatamente como a Railway pedir.
-   - Para o apex (`faotech.com.br`):
-     - Se o Registro.br permitir **CNAME/ALIAS no @**, use o CNAME da Railway.
-     - Se não permitir CNAME no `@`, adicione `www.faotech.com.br` como CNAME na Railway e no DNS; no Registro.br, redirecione `faotech.com.br` → `https://www.faotech.com.br`.
-5. Espere a verificação ficar verde na Railway (SSL automático).
+4. No **GoDaddy → Meu Produtos → Domínios → faotech.com.br → DNS / Gerenciar DNS**:
+   - Remova registros `A`/`CNAME` antigos de `@` e `www` que conflitem (ex.: parking da GoDaddy).
+   - Crie o **TXT** exatamente como a Railway pedir (geralmente `_railway-verify` ou o nome que a UI mostrar).
+   - Para o apex (`faotech.com.br` / `@`):
+     - Preferência: na Railway adicione também `www.faotech.com.br`.
+     - No GoDaddy: `CNAME` de `www` → host `*.up.railway.app` indicado pela Railway.
+     - No GoDaddy: use **Encaminhamento de domínio** (Domain Forwarding) de `faotech.com.br` → `https://www.faotech.com.br` (permanente / 301), **ou** se a Railway/GoDaddy oferecerem ALIAS/ANAME no `@`, use o CNAME/ALIAS do apex.
+   - GoDaddy costuma **não** aceitar CNAME puro no `@`; por isso `www` + encaminhamento do apex é o caminho mais estável.
+5. Espere a verificação ficar verde na Railway (SSL automático; pode levar minutos a algumas horas).
 6. Valide:
-   - `https://faotech.com.br` → redireciona para `/me`
-   - `https://faotech.com.br/me` → portfolio
+   - `https://www.faotech.com.br/me` → portfolio
+   - `https://faotech.com.br` → deve chegar em `/me` (via redirect do site e/ou encaminhamento)
 
 **Importante:** sem o registro `TXT`, o domínio pode ficar em 404 mesmo com o CNAME ok.
 
