@@ -28,8 +28,9 @@ export const metadata: Metadata = {
     images: [{ url: "/wallpapers/wallpaper-03.png" }],
   },
   icons: {
-    icon: "/brand/symbol.png",
-    apple: "/brand/symbol.png",
+    icon: [{ url: "/brand/symbol.png", type: "image/png" }],
+    apple: [{ url: "/brand/symbol.png", type: "image/png" }],
+    shortcut: "/brand/symbol.png",
   },
 };
 
